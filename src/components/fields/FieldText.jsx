@@ -3,40 +3,34 @@ import TextField from 'material-ui/TextField';
 import {withStyles} from "material-ui";
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: "100%",
-  },
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: "100%",
+    },
 });
 
 class FieldText extends Component {
-  render() {
-    const {classes} = this.props;
+    render() {
+        const {classes} = this.props;
 
-    return (
-      <div>
-        <TextField
-          label="title"
-          placeholder="Title"
-          multiline
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          label="description"
-          placeholder="Description"
-          multiline
-          className={classes.textField}
-          margin="normal"
-        />
-      </div>
-    );
-  }
+        return (
+            <div>
+                <h3>{this.props.field.title}</h3>
+                <TextField
+                    label="description"
+                    placeholder="your answer"
+                    multiline
+                    className={classes.textField}
+                    margin="normal"
+                />
+            </div>
+        );
+    }
 }
 
 export default withStyles(styles)(FieldText);
