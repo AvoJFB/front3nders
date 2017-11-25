@@ -61,6 +61,7 @@ class EditForm extends Component {
             {type: FieldTypes.NUMBER, name: 'Add number'},
             {type: FieldTypes.PHONE, name: 'Add phone'},
             {type: FieldTypes.CREDIT, name: 'Add credit'},
+            {type: FieldTypes.RADIO, name: 'Add radio'},
         ];
         console.log(this.props.formState);
         if (!this.props.formState.form) {
