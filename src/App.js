@@ -3,7 +3,7 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import DashboardComponent from './components/Dashboard';
+import DashboardContainer from './containers/DashboardContainer';
 import EditFormContainer from "./containers/EditFormContainer";
 
 const theme = createMuiTheme({
@@ -20,7 +20,7 @@ class App extends Component {
             <MuiThemeProvider theme={theme}>
               <div>
                 <Switch>
-                  <Route exact path='/' component={DashboardComponent} />
+                  <Route exact path='/' component={DashboardContainer} />
                   <Route path='/edit/:id' component={EditFormContainer}/>
                 </Switch>
               </div>
