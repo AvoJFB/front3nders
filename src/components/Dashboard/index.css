@@ -3,12 +3,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .paper {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
+    overflow: hidden;
+    display: block;
+    text-align: center;
 }
 
 .paper:hover {
@@ -20,6 +24,11 @@
     background: #ababab;
 }
 
+.paper:hover .plusIcon {
+    transform: rotate(180deg);
+}
+
 .plusIcon {
-    font-size: 400px;
+    font-size: 320px;
+    transition: transform 0.4s;
 }
