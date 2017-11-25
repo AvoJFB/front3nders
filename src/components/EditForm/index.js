@@ -5,14 +5,14 @@ import Toolbar from 'material-ui/Toolbar';
 import MdAddCircle from 'react-icons/lib/md/add-circle';
 import Typography from 'material-ui/Typography';
 import FieldTypes from '../../constants/fieldTypes';
-import './index.css';
 import {Button} from "material-ui";
 import TextField from "material-ui/TextField";
 import {withStyles} from "material-ui/styles";
 import FieldMapperContainer from '../../containers/FieldMapperContainer';
 import uuid from 'uuid/v4';
 import MdRemoveRedEye from 'react-icons/lib/md/remove-red-eye';
-import {ChromePicker, SketchPicker} from 'react-color'
+import {ChromePicker, SketchPicker} from 'react-color';
+import './index.css';
 
 const styles = theme => ({
   container: {
@@ -97,7 +97,7 @@ class EditForm extends Component {
         }
         return (
             <div className="containerEditForm">
-                <AppBar position="static">
+                <AppBar position="static" className="appStyle">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
                       <div className="toolsIcons">

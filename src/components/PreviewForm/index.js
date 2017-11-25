@@ -21,7 +21,7 @@ class PreviewForm extends Component {
         }
         return (
             <div className="containerEditForm">
-                <AppBar position="static">
+                <AppBar position="static" className="appStyle">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
                         <MdEdit onClick={() => this.props.history.push(`/edit/${this.props.match.params.id}`)}className="editIcon"/>

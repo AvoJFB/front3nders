@@ -11,6 +11,8 @@
     overflow: hidden;
     display: block;
     text-align: center;
+    transition: 0.4s;
+    background: #000;
 }
 
 .paperDashboard:hover {
@@ -31,6 +33,14 @@
 
 .plusIcon {
     font-size: 320px;
-    transition: transform 0.4s;
+    transition: 0.4s;
     transition-timing-function: ease-out;
+}
+
+.plusIcon:hover {
+    color: forestgreen;
+}
+
+div .appStyle {
+    background-color: forestgreen;
 }
