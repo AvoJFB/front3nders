@@ -19,22 +19,13 @@ class FormText extends Component {
         const {classes} = this.props;
 
         return (
-            <form className={classes.container} noValidate autoComplete="off">
-                <TextField
-                    label="Заголовок формы"
-                    placeholder="Введите текст"
-                    multiline
-                    className={classes.textField}
-                    margin="normal"
-                />
-                <TextField
-                    label="Описание формы"
-                    placeholder="Введите текст"
-                    multiline
-                    className={classes.textField}
-                    margin="normal"
-                />
-            </form>
+            <TextField
+                label="Text Field"
+                placeholder="Enter your text here"
+                multiline
+                className={classes.textField}
+                margin="normal"
+            />
         );
     }
 }
