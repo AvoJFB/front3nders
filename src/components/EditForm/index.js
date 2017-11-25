@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
+import MdAddCircle from 'react-icons/lib/md/add-circle';
 import Typography from 'material-ui/Typography';
 import FieldTypes from '../../constants/fieldTypes';
 import './index.css';
@@ -70,23 +71,26 @@ class EditForm extends Component {
                 <AppBar position="static">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="MdEye" />
+                        <div className="toolsIcons">
+                            <MdAddCircle className="plusFieldIcon"/>
+                            <div className="addFieldContainer">
+                                {
+                                    buttons.map((btn) => {
+                                        return <Button color="primary" aria-label="add" onClick={() => {
+                                            this.onAddField(btn.type)
+                                        }}>
+                                            {
+                                                btn.name
+                                            }
+                                        </Button>
+                                    })
+                                }
+
+                            </div>
+                            <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="eyeIcon" />
+                        </div>
                     </Toolbar>
                 </AppBar>
-                <div>
-                    {
-                        buttons.map((btn) => {
-                            return <Button color="primary" aria-label="add" onClick={() => {
-                                this.onAddField(btn.type)
-                            }}>
-                                {
-                                    btn.name
-                                }
-                            </Button>
-                        })
-                    }
-
-                </div>
                 <div className="formWrapper">
                     <TextField
                         label="Form title"
