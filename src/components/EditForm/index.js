@@ -13,6 +13,7 @@ import FieldDescription from '../fields/FieldDescription';
 import FieldCheckbox from '../fields/FieldCheckbox';
 import FieldRadioButton from '../fields/FieldRadioButton';
 import FieldPhoneNumber from '../fields/FieldPhoneNumber';
+import FieldCurrency from '../fields/FieldCurrency';
 import './index.css';
 
 const styles = theme => ({
@@ -46,12 +47,13 @@ class EditForm extends Component {
             <FieldTitle />
             <FieldDescription />
             <Paper className="paperEditForm">
-            <FieldText />
-            <FieldNumber />
-            <FieldSelect />
-            <FieldCheckbox />
-            <FieldRadioButton />
-            <FieldPhoneNumber />
+                <FieldText />
+                <FieldNumber />
+                <FieldSelect />
+                <FieldCheckbox />
+                <FieldRadioButton />
+                <FieldPhoneNumber />
+                <FieldCurrency/>
             </Paper>
         </div>
       </div>

@@ -19,7 +19,7 @@ class TextMaskCustom extends Component {
         return (
             <MaskedInput
                 {...this.props}
-                mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]}
                 placeholderChar={'\u2000'}
                 showMask
             />
@@ -29,8 +29,7 @@ class TextMaskCustom extends Component {
 
 class FieldPhoneNumber extends Component {
     state = {
-        textmask: '(1  )    -    ',
-        numberformat: '1320',
+        textmask: '(380) - '
     };
 
     handleChange = name => event => {
