@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import DashboardContainer from './containers/DashboardContainer';
-import EditFormContainer from "./containers/EditFormContainer";
+import EditFormContainer from './containers/EditFormContainer';
 
 const theme = createMuiTheme({
   direction: 'ltr',

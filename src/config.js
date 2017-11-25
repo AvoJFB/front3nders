@@ -1,7 +1,8 @@
+export const API_BASE = 'http://127.0.0.1:8000/api';
+
 const config = {
-  BASE_URL: '',
-  CREATE_URL: `${this.BASE_URL}/api/form`,
-  GET_URL: `${this.BASE_URL}/api/form`
+  CREATE_URL: `${API_BASE}/form`,
+  GET_URL: `${API_BASE}/form`
 };
 
 export default config;
