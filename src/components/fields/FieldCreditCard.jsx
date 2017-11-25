@@ -54,7 +54,6 @@ class FieldCreditCard extends Component {
         const {name, number, expiry, cvc, focused} = this.state;
         return (
             <div className={classes.container}>
-                <h3>{this.props.field.title}</h3>
                 <Cards
                     number={number}
                     name={name}
@@ -64,6 +63,7 @@ class FieldCreditCard extends Component {
                     callback={this.handleCallback}
                 />
                 <form>
+                    <h3>{this.props.field.title}</h3>
                     <div>
                         <TextField
                             type="tel"

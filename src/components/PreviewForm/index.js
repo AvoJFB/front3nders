@@ -28,8 +28,10 @@ class PreviewForm extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className="formWrapper">
-                    <h1>{this.props.formState.form.title}</h1>
-                    <h3>{this.props.formState.form.description}</h3>
+                    <div className="fromTitlesWrapper">
+                        <h1>{this.props.formState.form.title}</h1>
+                        <h3>{this.props.formState.form.description}</h3>
+                    </div>
                     <Paper style={{"backgroundColor": this.props.formState.form.color}} className="paperEditForm">
                         <h3>Please fill the form:</h3>
                         {
