@@ -17,7 +17,6 @@ const styles = theme => ({
 class FieldText extends Component {
     render() {
         const {classes} = this.props;
-
         return (
             <TextField
                 label="Text Field"

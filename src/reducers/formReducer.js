@@ -1,7 +1,10 @@
 import {
   GET_FORM_REQUEST,
   GET_FORM_FAILURE,
-  GET_FORM_SUCCESS
+  GET_FORM_SUCCESS,
+  CREATE_FORM_FAILURE,
+  CREATE_FORM_SUCCESS,
+  CREATE_FORM_REQUEST, UPDATE_FORM_FIELD
 } from '../constants/formConstants';
 
 const formReducer = (state = {
@@ -18,7 +21,7 @@ const formReducer = (state = {
     case GET_FORM_SUCCESS:
       return {
         ...state,
-        form: action.form,
+        form: action.form.payload,
         isFetching: false,
       };
     case GET_FORM_FAILURE:
@@ -26,6 +29,21 @@ const formReducer = (state = {
         ...state,
         error: action.error,
         isFetching: false,
+      };
+    case CREATE_FORM_SUCCESS:
+      return {
+        ...state,
+        form: action.form.payload,
+        isFetching: false,
+      };
+    case UPDATE_FORM_FIELD:
+      return {
+        ...state,
+        form: {
+          fields: state.form.fields.map(field => field.name === action.field.name ?
+            { ...field, value: field.value } : field
+          )
+        }
       };
     default:
       return state;
