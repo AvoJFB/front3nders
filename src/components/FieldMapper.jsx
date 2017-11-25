@@ -49,7 +49,10 @@ class FieldMapper extends Component {
         switch (this.props.field.type) {
             case FieldTypes.RADIO:
                 return <div>
-                    <TextField
+                    <Button onClick={() => this.addChoice()} raised color="primary" style={{"margin":"10px 0 0"}}>
+                        Add choices
+                    </Button>
+                    <TextField style={{"display":"block"}}
                         label="Field title"
                         value={this.props.field.title}
                         {...this.props}
@@ -58,7 +61,7 @@ class FieldMapper extends Component {
                         }}/>
                     {
                         (this.props.field.choices || []).map((choice) => {
-                            return <TextField
+                            return <TextField style={{"display":"block"}}
                                 label="Choice title"
                                 value={choice.name}
                                 {...this.props}
@@ -67,9 +70,6 @@ class FieldMapper extends Component {
                                 }}/>
                         })
                     }
-                    <Button onClick={() => this.addChoice()} raised color="primary">
-                        Add choices
-                    </Button>
                 </div>
             default:
                 return 'error'
