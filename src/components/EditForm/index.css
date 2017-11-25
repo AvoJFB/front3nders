@@ -8,8 +8,9 @@ body {
 
 .paperEditForm {
     width: 100%;
-    max-width: 770px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 20px;
 }
 
 .formWrapper {

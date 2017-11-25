@@ -73,21 +73,21 @@ class EditForm extends Component {
 
                 </div>
                 <div className="formWrapper">
+                    <TextField
+                        label="Form title"
+                        placeholder="Title"
+                        multiline
+                        className={classes.textField}
+                        margin="normal"
+                    />
+                    <TextField
+                        label="Form description"
+                        placeholder="description"
+                        multiline
+                        className={classes.textField}
+                        margin="normal"
+                    />
                     <Paper className="paperEditForm">
-                        <TextField
-                            label="Form title"
-                            placeholder="Title"
-                            multiline
-                            className={classes.textField}
-                            margin="normal"
-                        />
-                        <TextField
-                            label="Form description"
-                            placeholder="description"
-                            multiline
-                            className={classes.textField}
-                            margin="normal"
-                        />
 
                         <h3>Fields: </h3>
                         {
