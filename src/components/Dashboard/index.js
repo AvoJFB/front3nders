@@ -13,8 +13,9 @@ class Dashboard extends Component {
   }
 
   handleCreateForm() {
-    this.props.onCreateForm();
-    this.props.history.push('/edit/123124')
+    this.props.onCreateForm((id) => {
+      this.props.history.push(`/edit/${id}`)
+    });
   }
 
   render() {

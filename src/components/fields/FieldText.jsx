@@ -17,7 +17,6 @@ const styles = theme => ({
 class FormText extends Component {
     render() {
         const {classes} = this.props;
-
         return (
             <form className={classes.container} noValidate autoComplete="off">
                 <TextField

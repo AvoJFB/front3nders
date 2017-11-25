@@ -84,6 +84,7 @@ const FormTitleComponent = withStyles(styles)(FormTitle);
 
 class EditForm extends Component {
   componentWillMount() {
+    console.log(this.props.formState);
     if (!this.props.formState.form) {
       this.props.onGetForm(this.props.match.params.id)
     }
@@ -98,8 +99,8 @@ class EditForm extends Component {
           </Toolbar>
         </AppBar>
         <div className="formWrapper">
-          <FormTitleComponent />
           <Paper className="paperEditForm">
+            <FormTitleComponent />
             <FormText />
           </Paper>
         </div>
