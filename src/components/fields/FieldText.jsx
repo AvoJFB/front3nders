@@ -17,14 +17,24 @@ const styles = theme => ({
 class FormText extends Component {
     render() {
         const {classes} = this.props;
+
         return (
-            <TextField
-                label="Text Field"
-                placeholder="Enter your text here"
-                multiline
-                className={classes.textField}
-                margin="normal"
-            />
+            <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                    label="Form title"
+                    placeholder="Title"
+                    multiline
+                    className={classes.textField}
+                    margin="normal"
+                />
+                <TextField
+                    label="Form description"
+                    placeholder="Description"
+                    multiline
+                    className={classes.textField}
+                    margin="normal"
+                />
+            </form>
         );
     }
 }

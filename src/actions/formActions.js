@@ -41,16 +41,7 @@ export const createFormSuccess = form => ({
   type: CREATE_FORM_SUCCESS,
   form: {
     id: form.id,
-    fields: [
-      {
-        type: 'title',
-        value: null,
-      },
-      {
-        type: 'description',
-        value: null,
-      }
-    ]
+    fields: []
   },
 });
 
