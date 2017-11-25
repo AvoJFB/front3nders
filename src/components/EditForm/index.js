@@ -123,24 +123,26 @@ class EditForm extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className="formWrapper">
-                    <TextField
-                        label="Form title"
-                        placeholder="Title"
-                        multiline
-                        value={this.props.formState.form.title}
-                        onChange={(e) => this.handleUpdateFormTitle(e.target.value)}
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        label="Form description"
-                        placeholder="Description"
-                        multiline
-                        onChange={(e) => this.handleUpdateFormDescription(e.target.value)}
-                        value={this.props.formState.form.description}
-                        className={classes.textField}
-                        margin="normal"
-                    />
+                    <div className="fromTitlesWrapper">
+                        <TextField
+                            label="Form title"
+                            placeholder="Title"
+                            multiline
+                            value={this.props.formState.form.title}
+                            onChange={(e) => this.handleUpdateFormTitle(e.target.value)}
+                            className={classes.textField}
+                            margin="normal"
+                        />
+                        <TextField
+                            label="Form description"
+                            placeholder="Description"
+                            multiline
+                            onChange={(e) => this.handleUpdateFormDescription(e.target.value)}
+                            value={this.props.formState.form.description}
+                            className={classes.textField}
+                            margin="normal"
+                        />
+                    </div>
                     <div>
                         <Button color="primary" className={classes.button} onClick={() => this.handleClick()}>
                             Pick Color
