@@ -70,7 +70,7 @@ class EditForm extends Component {
                 <AppBar position="static">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye className="MdEye" />
+                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="MdEye" />
                     </Toolbar>
                 </AppBar>
                 <div>
