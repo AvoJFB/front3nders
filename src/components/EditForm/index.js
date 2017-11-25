@@ -31,10 +31,9 @@ class EditForm extends Component {
     }
 
     onAddField(fieldType) {
-
-        this.props.formState.form.fields.push({
-            type: fieldType
-        })
+      this.props.onCreateFormField({
+        type: fieldType
+      })
     }
 
     render() {
