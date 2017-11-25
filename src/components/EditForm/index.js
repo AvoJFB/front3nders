@@ -118,7 +118,7 @@ class EditForm extends Component {
 
                           </div>
                         </div>
-                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="eyeIcon" />
+                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.match.params.id}`)} className="eyeIcon" />
                       </div>
                     </Toolbar>
                 </AppBar>
@@ -141,7 +141,7 @@ class EditForm extends Component {
                         className={classes.textField}
                         margin="normal"
                     />
-                    <Paper className="paperEditForm">
+                    <Paper style={{"backgroundColor": this.props.formState.form.color}} className="paperEditForm">
 
             <h3>Fields: </h3>
             {

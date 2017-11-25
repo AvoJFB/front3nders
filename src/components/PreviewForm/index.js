@@ -24,13 +24,13 @@ class PreviewForm extends Component {
                 <AppBar position="static">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdEdit className="editIcon"/>
+                        <MdEdit onClick={() => this.props.history.push(`/edit/${this.props.match.params.id}`)}className="editIcon"/>
                     </Toolbar>
                 </AppBar>
                 <div className="formWrapper">
                     <h1>{this.props.formState.form.title}</h1>
                     <h3>{this.props.formState.form.description}</h3>
-                    <Paper className="paperEditForm">
+                    <Paper style={{"backgroundColor": this.props.formState.form.color}} className="paperEditForm">
                         <h3>Please fill the form:</h3>
                         {
                             this.props.formState.form.fields.map((field) => {
