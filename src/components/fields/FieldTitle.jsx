@@ -14,13 +14,14 @@ const styles = theme => ({
     },
 });
 
-class FormText extends Component {
+class FormTitle extends Component {
     render() {
         const {classes} = this.props;
+
         return (
             <TextField
-                label="Text Field"
-                placeholder="Enter your text here"
+                label="Title Field"
+                placeholder="Enter your title here"
                 multiline
                 className={classes.textField}
                 margin="normal"
@@ -29,4 +30,4 @@ class FormText extends Component {
     }
 }
 
-export default withStyles(styles)(FormText);
+export default withStyles(styles)(FormTitle);
