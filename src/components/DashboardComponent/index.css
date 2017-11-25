@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.paper {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.paper:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+.plusIcon {
+    font-size: 400px;
+}

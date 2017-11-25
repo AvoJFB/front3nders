@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import DashboardComponent from "./components/DashboardComponent";
+import DashboardComponent from "./components/DashboardComponent/index";
 
 const theme = createMuiTheme({
   direction: 'ltr',
