@@ -18,3 +18,16 @@ body {
     max-width: 770px;
     margin: 0 auto;
 }
+
+.containerHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MdEye {
+    font-size: 30px;
+}
+
+.MdEye:hover {
+    cursor: pointer;
+}

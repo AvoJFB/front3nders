@@ -53,9 +53,9 @@ class EditForm extends Component {
         return (
             <div className="containerEditForm">
                 <AppBar position="static">
-                    <Toolbar>
+                    <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye/>
+                        <MdRemoveRedEye className="MdEye" />
                     </Toolbar>
                 </AppBar>
                 <div>
