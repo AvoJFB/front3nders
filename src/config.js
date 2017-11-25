@@ -1,4 +1,4 @@
-export const API_BASE = 'http://192.168.182.16:8000/api';
+export const API_BASE = 'http://hack-forms.herokuapp.com/api';
 
 const config = {
   CREATE_URL: `${API_BASE}/form`,
