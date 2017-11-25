@@ -20,16 +20,18 @@ class Dashboard extends Component {
 
   render() {
     return (
-        <div className="containerDashboard">
+        <div>
             <AppBar position="static">
                 <Toolbar>
                     <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
                 </Toolbar>
             </AppBar>
-            <h1>Create Form</h1>
-            <Paper className="paperDashboard">
-              <MdAdd onClick={this.handleCreateForm} className="plusIcon"/>
-            </Paper>
+            <div className="containerDashboard">
+                <h1>Create Form</h1>
+                <Paper className="paperDashboard">
+                    <MdAdd onClick={this.handleCreateForm} className="plusIcon"/>
+                </Paper>
+            </div>
         </div>
     )
   }
