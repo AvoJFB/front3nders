@@ -5,11 +5,15 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import { withStyles } from 'material-ui/styles';
-import FormText from '../fields/FieldText';
-import FormNumber from '../fields/FieldNumber';
-import FormSelect from '../fields/FieldSelect';
-import FormTitle from '../fields/FieldTitle';
-import FormDescription from '../fields/FieldDescription';
+import FieldText from '../fields/FieldText';
+import FieldNumber from '../fields/FieldNumber';
+import FieldSelect from '../fields/FieldSelect';
+import FieldTitle from '../fields/FieldTitle';
+import FieldDescription from '../fields/FieldDescription';
+import FieldCheckbox from '../fields/FieldCheckbox';
+import FieldRadioButton from '../fields/FieldRadioButton';
+import FieldPhoneNumber from '../fields/FieldPhoneNumber';
+import FieldCurrency from '../fields/FieldCurrency';
 import './index.css';
 
 const styles = theme => ({
@@ -40,13 +44,17 @@ class EditForm extends Component {
           </Toolbar>
         </AppBar>
         <div className="formWrapper">
-          <Paper className="paperEditForm">
-            <FormTitle />
-            <FormDescription />
-            <FormText />
-            <FormNumber />
-            <FormSelect />
-          </Paper>
+            <FieldTitle />
+            <FieldDescription />
+            <Paper className="paperEditForm">
+                <FieldText />
+                <FieldNumber />
+                <FieldSelect />
+                <FieldCheckbox />
+                <FieldRadioButton />
+                <FieldPhoneNumber />
+                <FieldCurrency/>
+            </Paper>
         </div>
       </div>
     )

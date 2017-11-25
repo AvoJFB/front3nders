@@ -20,7 +20,7 @@ const styles = theme => ({
     },
 });
 
-class FormSelect extends Component {
+class FieldSelect extends Component {
     state = {
         age: '',
         name: 'hai',
@@ -35,7 +35,7 @@ class FormSelect extends Component {
 
         return (
             <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-simple">Age</InputLabel>
+                <InputLabel htmlFor="age-simple">Select field</InputLabel>
                 <Select
                     value={this.state.age}
                     onChange={this.handleChange('age')}
@@ -53,4 +53,4 @@ class FormSelect extends Component {
     }
 }
 
-export default withStyles(styles)(FormSelect);
+export default withStyles(styles)(FieldSelect);

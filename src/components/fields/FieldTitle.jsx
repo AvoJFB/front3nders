@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import {withStyles} from "material-ui";
-import {connect} from 'react-redux';
-
-const mapStateToProps = state => ({
-  fields: state.formState.form.fields,
-});
 
 const styles = theme => ({
     container: {
@@ -35,4 +30,4 @@ class FieldTitle extends Component {
     }
 }
 
-export default connect(mapStateToProps, withStyles(styles)(FieldTitle));
+export default withStyles(styles)(FieldTitle);

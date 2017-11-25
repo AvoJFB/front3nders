@@ -14,7 +14,7 @@ const styles = theme => ({
     },
 });
 
-class FormNumber extends Component {
+class FieldNumber extends Component {
     state = {
         name: 'Cat in the Hat',
         age: '',
@@ -49,4 +49,4 @@ class FormNumber extends Component {
     }
 }
 
-export default withStyles(styles)(FormNumber);
+export default withStyles(styles)(FieldNumber);
