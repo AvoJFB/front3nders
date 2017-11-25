@@ -14,7 +14,7 @@ const styles = theme => ({
     },
 });
 
-class FormText extends Component {
+class FieldText extends Component {
     render() {
         const {classes} = this.props;
 
@@ -30,4 +30,4 @@ class FormText extends Component {
     }
 }
 
-export default withStyles(styles)(FormText);
+export default withStyles(styles)(FieldText);

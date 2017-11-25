@@ -14,7 +14,7 @@ const styles = theme => ({
     },
 });
 
-class FormTitle extends Component {
+class FieldTitle extends Component {
     render() {
         const {classes} = this.props;
 
@@ -30,4 +30,4 @@ class FormTitle extends Component {
     }
 }
 
-export default withStyles(styles)(FormTitle);
+export default withStyles(styles)(FieldTitle);
