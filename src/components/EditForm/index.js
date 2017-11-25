@@ -8,7 +8,7 @@ import FieldTypes from '../../constants/fieldTypes';
 import './index.css';
 import {Button} from "material-ui";
 import TextField from "material-ui/TextField";
-import withStyles from "material-ui/styles";
+import {withStyles} from "material-ui/styles";
 import FieldMapperContainer from '../../containers/FieldMapperContainer';
 import uuid from 'uuid/v4';
 import MdRemoveRedEye from 'react-icons/lib/md/remove-red-eye';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/lib/styles-compiled.css';
-import TextField from "material-ui/es/TextField/TextField";
+import TextField from "material-ui/TextField";
 
 const styles = theme => ({
     container: {
