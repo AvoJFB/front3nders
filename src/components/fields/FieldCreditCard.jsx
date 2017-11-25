@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import MaskedInput from 'react-text-mask';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Input from 'material-ui/Input';
+import {withStyles} from 'material-ui/styles';
+import Cards from 'react-credit-cards';
+import 'react-credit-cards/lib/styles-compiled.css';
+import TextField from "material-ui/es/TextField/TextField";
 
 const styles = theme => ({
     container: {
@@ -14,43 +15,96 @@ const styles = theme => ({
     },
 });
 
-class TextMaskCustom extends Component {
-    render() {
-        return (
-            <MaskedInput
-                {...this.props}
-                mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
-                placeholderChar={'\u2000'}
-                showMask
-            />
-        );
-    }
-}
-
 class FieldCreditCard extends Component {
     state = {
-        textmask: ''
+        textmask: '',
+        ...{name: '', number: '', expiry: '', cvc: '', focused: ''}
+    };
+    handleInputChange = (e) => {
+        const target = e.target;
+
+        if (target.name === 'number') {
+            this.setState({
+                [target.name]: target.value.replace(/ /g, ''),
+            });
+        }
+        else if (target.name === 'expiry') {
+            this.setState({
+                [target.name]: target.value.replace(/ |\//g, ''),
+            });
+        }
+        else {
+            this.setState({
+                [target.name]: target.value,
+            });
+        }
     };
 
-    handleChange = name => event => {
+    handleInputFocus = (e) => {
+        const target = e.target;
+
         this.setState({
-            [name]: event.target.value,
+            focused: target.name,
         });
     };
 
+
     render() {
-        const { classes } = this.props;
+        const {classes} = this.props;
+        const {name, number, expiry, cvc, focused} = this.state;
         return (
             <div className={classes.container}>
-                <Input
-                    value={this.state.textmask}
-                    inputComponent={TextMaskCustom}
-                    onChange={this.handleChange('textmask')}
-                    className={classes.input}
-                    inputProps={{
-                        'aria-label': 'Description',
-                    }}
+                <h3>{this.props.field.title}</h3>
+                <Cards
+                    number={number}
+                    name={name}
+                    expiry={expiry}
+                    cvc={cvc}
+                    focused={focused}
+                    callback={this.handleCallback}
                 />
+                <form>
+                    <div>
+                        <TextField
+                            type="tel"
+                            name="number"
+                            label="Card number"
+                            margin="normal"
+                            multiline
+                            placeholder="Card number"
+                            onKeyUp={this.handleInputChange}
+                            onFocus={this.handleInputFocus}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            type="text"
+                            label="Name"
+                            name="name"
+                            placeholder="Name"
+                            onKeyUp={this.handleInputChange}
+                            onFocus={this.handleInputFocus}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            type="tel"
+                            name="expiry"
+                            label="expiry"
+                            placeholder="Valid Thru"
+                            onKeyUp={this.handleInputChange}
+                            onFocus={this.handleInputFocus}
+                        />
+                        <TextField
+                            type="tel"
+                            name="cvc"
+                            label="cvc"
+                            placeholder="CVC"
+                            onKeyUp={this.handleInputChange}
+                            onFocus={this.handleInputFocus}
+                        />
+                    </div>
+                </form>
             </div>
         );
     }

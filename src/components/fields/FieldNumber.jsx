@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import TextField from 'material-ui/TextField';
 import {withStyles} from "material-ui";
 
@@ -33,18 +33,21 @@ class FieldNumber extends Component {
         const {classes} = this.props;
 
         return (
-            <TextField
-                id="number"
-                label="Number"
-                value={this.state.age}
-                onChange={this.handleChange('age')}
-                type="number"
-                className={classes.textField}
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                margin="normal"
-            />
+            <div>
+                <h3>{this.props.field.title}</h3>
+                <TextField
+                    id="number"
+                    label="Number"
+                    value={this.state.age}
+                    onChange={this.handleChange('age')}
+                    type="number"
+                    className={classes.textField}
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    margin="normal"
+                />
+            </div>
         );
     }
 }
