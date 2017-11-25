@@ -1,14 +1,18 @@
-import { updateFormField } from '../../actions/formActions';
+import { getForm } from '../../actions/formActions';
 import PreviewForm from '../../components/PreviewForm';
 import { connect } from 'react-redux';
 
-// const mapDispatchToProps = dispatch => ({
-//   onUpdateFormField: (field) => dispatch(updateFormField(field)),
-// });
+const mapStateToProps = state => ({
+  formState: state.formState,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onGetForm: (id) => dispatch(getForm(id)),
+});
 
 const PreviewFormContainer = connect(
-  null,
-  null,
+  mapStateToProps,
+  mapDispatchToProps,
 )(PreviewForm);
 
 export default PreviewFormContainer;
