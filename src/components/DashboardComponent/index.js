@@ -5,7 +5,7 @@ import './index.css';
 
 const DashboardComponent = () => (
   <div className="container">
-    <h1>Create Form</h1>
+    <h1>Green Forest Bank - Create Form</h1>
     <Paper className="paper">
       <MdAdd className="plusIcon"/>
     </Paper>
