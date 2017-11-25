@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import MdAdd from 'react-icons/lib/md/add';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import './index.css';
 
 class Dashboard extends Component {
@@ -16,13 +19,15 @@ class Dashboard extends Component {
   render() {
     return (
         <div className="containerDashboard">
-          <div className="titlesContainer">
-          <h1>Green Forest Bank</h1>
-          <h1>Create Form</h1>
-          </div>
-          <Paper className="paperDashboard">
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
+                </Toolbar>
+            </AppBar>
+            <h1>Create Form</h1>
+            <Paper className="paperDashboard">
               <MdAdd onClick={this.handleCreateForm} className="plusIcon"/>
-          </Paper>
+            </Paper>
         </div>
     )
   }
