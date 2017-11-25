@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f97c07ef-7318-4f77-b5a2-191051b299d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/DashboardComponent/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/DashboardComponent.jsx" afterPath="$PROJECT_DIR$/src/components/DashboardComponent/index.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/DashboardComponent/index.css" afterPath="$PROJECT_DIR$/src/components/DashboardComponent/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +38,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/DashboardComponent/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="323">
+              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -180,10 +178,18 @@
       <updated>1511594866181</updated>
       <workItem from="1511594867298" duration="4668000" />
     </task>
+    <task id="LOCAL-00001" summary="Style changes for dashboard component">
+      <created>1511603080620</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1511603080620</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5946000" />
+    <option name="totallyTimeSpent" value="6186000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -222,6 +228,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Style changes for dashboard component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Style changes for dashboard component" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -311,6 +321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-936">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -341,6 +352,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-624">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -384,8 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DashboardComponent/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>

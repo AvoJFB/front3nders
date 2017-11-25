@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.paper:active {
+    background: #ababab;
+}
+
 .plusIcon {
     font-size: 400px;
 }
