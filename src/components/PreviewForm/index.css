@@ -1,0 +1,35 @@
+.formTitle {
+    text-align: center;
+}
+
+body {
+    background: #eeeeee;
+}
+
+.paperEditForm {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 20px;
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 755px;
+    margin: 0 auto;
+}
+
+.containerHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MdEye {
+    font-size: 30px;
+    transition: opacity 0.2s;
+}
+
+.MdEye:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
