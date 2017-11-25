@@ -99,7 +99,7 @@ class EditForm extends Component {
                     />
                     <TextField
                         label="Form description"
-                        placeholder="description"
+                        placeholder="Description"
                         multiline
                         onChange={(e) => this.handleUpdateFormDescription(e.target.value)}
                         value={this.props.formState.form.description}
