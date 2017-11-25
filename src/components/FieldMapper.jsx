@@ -20,9 +20,12 @@ class FieldMapper extends Component {
                 FieldTypes.CREDIT,
 
             ]) {
-            return <TextField {...this.props} onChange={(e) => {
-                this.handleOnChange(e.target.value)
-            }}/>;
+            return <div>
+                <div>Enter field title</div>
+                <TextField {...this.props} onChange={(e) => {
+                    this.handleOnChange(e.target.value)
+                }}/>
+            </div>
         }
         return 'error'
     }
