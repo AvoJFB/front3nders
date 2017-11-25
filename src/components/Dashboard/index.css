@@ -34,3 +34,7 @@
     transition: transform 0.4s;
     transition-timing-function: ease-out;
 }
+
+.appStyle {
+    background-color: #000;
+}

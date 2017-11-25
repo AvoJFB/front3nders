@@ -21,7 +21,7 @@ class Dashboard extends Component {
   render() {
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" className="appStyle">
                 <Toolbar>
                     <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
                 </Toolbar>
