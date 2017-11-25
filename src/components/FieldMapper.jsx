@@ -1,25 +1,30 @@
 import React, {Component} from 'react';
 import FieldTypes from '../constants/fieldTypes';
-import FieldText from "./fields/FieldText";
-import FieldNumber from "./fields/FieldNumber";
-import FieldPhoneNumber from "./fields/FieldPhoneNumber";
+import TextField from "../../node_modules/material-ui/TextField/TextField";
 
 class FieldMapper extends Component {
     constructor() {
         super()
     }
 
+    handleOnChange(text) {
+        this.props.field.title = text;
+        this.props.onUpdateFomfield(this.props.field);
+    }
+
     render() {
-        switch (this.props.field.type) {
-            case FieldTypes.TEXT:
-                return <FieldText  {...this.props} />;
-            case FieldTypes.NUMBER:
-                return <FieldNumber {...this.props} />;
-          case FieldTypes.PHONE:
-            return <FieldPhoneNumber {...this.props} />;
-            default:
-              return 'error'
+        if (this.props.field.type in [
+                FieldTypes.TEXT,
+                FieldTypes.NUMBER,
+                FieldTypes.PHONE,
+                FieldTypes.CREDIT,
+
+            ]) {
+            return <TextField {...this.props} onChange={(e) => {
+                this.handleOnChange(e.target.value)
+            }}/>;
         }
+        return 'error'
     }
 }
 
