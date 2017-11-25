@@ -141,28 +141,32 @@ class EditForm extends Component {
                         className={classes.textField}
                         margin="normal"
                     />
+                    <div>
+                        <Button color="primary" className={classes.button} onClick={() => this.handleClick()}>
+                            Pick Color
+                        </Button>
+                        { this.state.displayColorPicker ? <div style={ popover }>
+                            <div style={ cover } onClick={() => this.handleClose()}/>
+                            <ChromePicker color={this.props.formState.form.color} onChange={(color) => this.handleColorChange(color)} />
+                        </div> : null }
+                    </div>
                     <Paper style={{"backgroundColor": this.props.formState.form.color}} className="paperEditForm">
 
-            <h3>Fields: </h3>
-            {
-              this.props.formState.form.fields.map((field) => {
-                return <FieldMapperContainer field={field}/>
-              })
-            }
+                        <h3>Fields: </h3>
+                        {
+                          this.props.formState.form.fields.map((field) => {
+                            return <FieldMapperContainer field={field}/>
+                          })
+                        }
 
-          </Paper>
+                    </Paper>
 
-          <div>
-            <button onClick={() => this.handleClick()}>Pick Color</button>
-            { this.state.displayColorPicker ? <div style={ popover }>
-              <div style={ cover } onClick={() => this.handleClose()}/>
-              <ChromePicker color={this.props.formState.form.color} onChange={(color) => this.handleColorChange(color)} />
-            </div> : null }
-          </div>
-
-          <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
-            Save form
-          </Button>
+                  <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
+                    Save form
+                  </Button>
+                    <a href=""><Button color="primary" className={classes.button}>
+                        CANCEL
+                    </Button></a>
         </div>
       </div>
     )

@@ -35,7 +35,7 @@ class FieldRadioButton extends Component {
                     >
                         {
                             this.props.field.choices.map((choice) => {
-                                return <FormControlLabel value={choice.value} control={<Radio/>} label={choice.name}/>
+                                return <FormControlLabel control={<Radio/>} label={choice.name}/>
                             })
                         }
                     </RadioGroup>
