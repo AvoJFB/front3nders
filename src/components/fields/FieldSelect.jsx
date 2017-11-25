@@ -35,7 +35,7 @@ class FormSelect extends Component {
 
         return (
             <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-simple">Age</InputLabel>
+                <InputLabel htmlFor="age-simple">Select field</InputLabel>
                 <Select
                     value={this.state.age}
                     onChange={this.handleChange('age')}

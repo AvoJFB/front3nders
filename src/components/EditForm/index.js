@@ -10,6 +10,7 @@ import FormNumber from '../fields/FieldNumber';
 import FormSelect from '../fields/FieldSelect';
 import FormTitle from '../fields/FieldTitle';
 import FormDescription from '../fields/FieldDescription';
+import FormCheckbox from '../fields/FieldCheckbox';
 import './index.css';
 
 const styles = theme => ({
@@ -46,6 +47,7 @@ class EditForm extends Component {
             <FormText />
             <FormNumber />
             <FormSelect />
+            <FormCheckbox />
             </Paper>
         </div>
       </div>
