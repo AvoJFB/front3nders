@@ -72,20 +72,22 @@ class EditForm extends Component {
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
                         <div className="toolsIcons">
-                            <MdAddCircle className="plusFieldIcon"/>
-                            <div className="addFieldContainer">
-                                {
-                                    buttons.map((btn) => {
-                                        return <Button color="primary" aria-label="add" onClick={() => {
-                                            this.onAddField(btn.type)
-                                        }}>
-                                            {
-                                                btn.name
-                                            }
-                                        </Button>
-                                    })
-                                }
+                            <div className="menuContainer">
+                                <MdAddCircle className="plusFieldIcon"/>
+                                <div className="addFieldContainer">
+                                    {
+                                        buttons.map((btn) => {
+                                            return <Button color="primary" aria-label="add" onClick={() => {
+                                                this.onAddField(btn.type)
+                                            }}>
+                                                {
+                                                    btn.name
+                                                }
+                                            </Button>
+                                        })
+                                    }
 
+                                </div>
                             </div>
                             <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="eyeIcon" />
                         </div>
