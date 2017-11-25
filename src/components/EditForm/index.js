@@ -40,6 +40,12 @@ class EditForm extends Component {
 
     render() {
         const {classes} = this.props;
+        const buttons = [
+            {type: FieldTypes.TEXT, name: 'Add Text'},
+            {type: FieldTypes.NUMBER, name: 'Add number'},
+            {type: FieldTypes.PHONE, name: 'Add phone'},
+            {type: FieldTypes.CREDIT, name: 'Add credit'},
+        ];
         console.log(this.props.formState);
         if (!this.props.formState.form) {
             return 'Loading'
@@ -49,20 +55,22 @@ class EditForm extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye />
+                        <MdRemoveRedEye/>
                     </Toolbar>
                 </AppBar>
                 <div>
-                    <Button color="primary" aria-label="add" onClick={() => {
-                        this.onAddField(FieldTypes.TEXT)
-                    }}>
-                        add text
-                    </Button>
-                    <Button color="primary" aria-label="add" onClick={() => {
-                        this.onAddField(FieldTypes.NUMBER)
-                    }}>
-                        add number
-                    </Button>
+                    {
+                        buttons.map((btn) => {
+                            return <Button color="primary" aria-label="add" onClick={() => {
+                                this.onAddField(btn.type)
+                            }}>
+                                {
+                                    btn.name
+                                }
+                            </Button>
+                        })
+                    }
+
                 </div>
                 <div className="formWrapper">
                     <Paper className="paperEditForm">
