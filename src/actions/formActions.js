@@ -7,7 +7,7 @@ import {
   GET_FORM_REQUEST,
   CREATE_FORM_REQUEST,
   CREATE_FORM_FAILURE,
-  CREATE_FORM_SUCCESS, UPDATE_FORM_FIELD, CREATE_FORM_FIELD
+  CREATE_FORM_SUCCESS, UPDATE_FORM_FIELD, CREATE_FORM_FIELD, UPDATE_FORM_TITLE, UPDATE_FORM_DESCRIPTION
 } from '../constants/formConstants';
 import { history } from 'react-router-dom'
 
@@ -52,7 +52,7 @@ export const createFormFailure = error => ({
 
 export const createForm = (cb) => (dispatch) => {
   dispatch(createFormRequest());
-  return axios.post(config.CREATE_URL, { content: "" }).then(
+  return axios.post(config.CREATE_URL, { content: "{ fields: []}" }).then(
     res => {
       const dis = dispatch(createFormSuccess(res.data));
       cb(res.data.payload.id);
@@ -70,4 +70,14 @@ export const updateFormField = (field) => ({
 export const createFormField = (field) => ({
   type: CREATE_FORM_FIELD,
   field: field,
+});
+
+export const updateFormTitle = (title) => ({
+  type: UPDATE_FORM_TITLE,
+  title: title,
+});
+
+export const updateFormDescription = (description) => ({
+  type: UPDATE_FORM_DESCRIPTION,
+  description: description,
 });
