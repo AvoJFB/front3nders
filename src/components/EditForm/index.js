@@ -14,6 +14,7 @@ import FieldCheckbox from '../fields/FieldCheckbox';
 import FieldRadioButton from '../fields/FieldRadioButton';
 import FieldPhoneNumber from '../fields/FieldPhoneNumber';
 import FieldCurrency from '../fields/FieldCurrency';
+import MdRemoveRedEye from 'react-icons/lib/md/remove-red-eye';
 import './index.css';
 
 const styles = theme => ({
@@ -41,6 +42,7 @@ class EditForm extends Component {
         <AppBar position="static">
           <Toolbar>
             <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
+            <MdRemoveRedEye />
           </Toolbar>
         </AppBar>
         <div className="formWrapper">
