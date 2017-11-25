@@ -153,7 +153,9 @@ class EditForm extends Component {
           </Paper>
 
           <div>
-            <button onClick={() => this.handleClick()}>Pick Color</button>
+          <Button color="primary" className={classes.button} onClick={() => this.handleClick()}>
+              Pick Color
+          </Button>
             { this.state.displayColorPicker ? <div style={ popover }>
               <div style={ cover } onClick={() => this.handleClose()}/>
               <ChromePicker color={this.props.formState.form.color} onChange={(color) => this.handleColorChange(color)} />
