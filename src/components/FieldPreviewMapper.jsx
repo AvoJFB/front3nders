@@ -4,6 +4,7 @@ import FieldText from "./fields/FieldText";
 import FieldNumber from "./fields/FieldNumber";
 import FieldPhoneNumber from "./fields/FieldPhoneNumber";
 import FieldRadioButton from "./fields/FieldRadioButton";
+import FieldCreditCard from "./fields/FieldCreditCard";
 
 class FieldPreviewMapper extends Component {
     constructor() {
@@ -19,7 +20,7 @@ class FieldPreviewMapper extends Component {
             case FieldTypes.PHONE:
                 return <FieldPhoneNumber {...this.props} />;
             case FieldTypes.CREDIT:
-                return 'credit';
+                return <FieldCreditCard {...this.props} />;
             case FieldTypes.RADIO:
                 return <FieldRadioButton {...this.props}/>;
             default:
