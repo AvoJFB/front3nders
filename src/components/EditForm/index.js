@@ -40,13 +40,13 @@ class EditForm extends Component {
           </Toolbar>
         </AppBar>
         <div className="formWrapper">
+          <Paper className="paperEditForm">
             <FormTitle />
             <FormDescription />
-            <Paper className="paperEditForm">
             <FormText />
             <FormNumber />
             <FormSelect />
-            </Paper>
+          </Paper>
         </div>
       </div>
     )

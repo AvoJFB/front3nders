@@ -31,9 +31,10 @@ const formReducer = (state = {
         isFetching: false,
       };
     case CREATE_FORM_SUCCESS:
+      console.log(action);
       return {
         ...state,
-        form: action.form.payload,
+        form: action.form,
         isFetching: false,
       };
     case UPDATE_FORM_FIELD:
