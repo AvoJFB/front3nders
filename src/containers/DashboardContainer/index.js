@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import { createForm } from '../../actions/formActions';
-import NewOrderDialog from '../../components/NewOrderDialog';
+import Dashboard from '../../components/Dashboard';
 
 const mapDispatchToProps = dispatch => ({
-  onGetCustomers: () => dispatch(getCustomers()),
+  onCreateForm: () => dispatch(createForm()),
 });
 
-const NewOrderDialogContainer = connect(
+const DashboardContainer = connect(
   null,
   mapDispatchToProps,
-)(NewOrderDialog);
+)(Dashboard);
 
-export default NewOrderDialogContainer;
+export default DashboardContainer;
 
