@@ -7,7 +7,7 @@ import {
   GET_FORM_REQUEST,
   CREATE_FORM_REQUEST,
   CREATE_FORM_FAILURE,
-  CREATE_FORM_SUCCESS, UPDATE_FORM_FIELD
+  CREATE_FORM_SUCCESS, UPDATE_FORM_FIELD, CREATE_FORM_FIELD
 } from '../constants/formConstants';
 import { history } from 'react-router-dom'
 
@@ -41,16 +41,7 @@ export const createFormSuccess = form => ({
   type: CREATE_FORM_SUCCESS,
   form: {
     id: form.id,
-    fields: [
-      {
-        type: 'title',
-        value: null,
-      },
-      {
-        type: 'description',
-        value: null,
-      }
-    ]
+    fields: []
   },
 });
 
@@ -74,4 +65,9 @@ export const createForm = (cb) => (dispatch) => {
 export const updateFormField = (field) => ({
   type: UPDATE_FORM_FIELD,
   field: field
-})
+});
+
+export const createFormField = (field) => ({
+  type: CREATE_FORM_FIELD,
+  field: field,
+});

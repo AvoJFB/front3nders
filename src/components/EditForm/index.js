@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-import TextField from 'material-ui/TextField';
-import { withStyles } from 'material-ui/styles';
-import FieldText from '../fields/FieldText';
-import FieldNumber from '../fields/FieldNumber';
-import FieldSelect from '../fields/FieldSelect';
-import FieldTitle from '../fields/FieldTitle';
-import FieldDescription from '../fields/FieldDescription';
-import FieldCheckbox from '../fields/FieldCheckbox';
-import FieldRadioButton from '../fields/FieldRadioButton';
-import FieldPhoneNumber from '../fields/FieldPhoneNumber';
-import FieldCurrency from '../fields/FieldCurrency';
-import MdRemoveRedEye from 'react-icons/lib/md/remove-red-eye';
+import FieldTypes from '../../constants/fieldTypes';
 import './index.css';
+import {Button} from "material-ui";
+import TextField from "material-ui/es/TextField/TextField";
+import withStyles from "material-ui/es/styles/withStyles";
+import FieldMapper from "../FieldMapper";
 
 const styles = theme => ({
     container: {
@@ -30,37 +23,73 @@ const styles = theme => ({
 });
 
 class EditForm extends Component {
-  componentWillMount() {
-    if (!this.props.formState.form) {
-      this.props.onGetForm(this.props.match.params.id)
+    componentWillMount() {
+        if (!this.props.formState.form) {
+            this.props.onGetForm(this.props.match.params.id)
+        }
     }
-  }
 
-  render() {
-    return (
-      <div className="containerEditForm">
-        <AppBar position="static">
-          <Toolbar>
-            <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-            <MdRemoveRedEye />
-          </Toolbar>
-        </AppBar>
-        <div className="formWrapper">
-            <FieldTitle />
-            <FieldDescription />
-            <Paper className="paperEditForm">
-                <FieldText />
-                <FieldNumber />
-                <FieldSelect />
-                <FieldCheckbox />
-                <FieldRadioButton />
-                <FieldPhoneNumber />
-                <FieldCurrency/>
-            </Paper>
-        </div>
-      </div>
-    )
-  }
+    onAddField(fieldType) {
+
+        this.props.formState.form.fields.push({
+            type: fieldType
+        })
+    }
+
+    render() {
+        const {classes} = this.props;
+        console.log(this.props.formState);
+        if (!this.props.formState.form) {
+            return 'Loading'
+        }
+        return (
+            <div className="containerEditForm">
+                <AppBar position="static">
+                    <Toolbar>
+                        <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
+                    </Toolbar>
+                </AppBar>
+                <div>
+                    <Button color="primary" aria-label="add" onClick={() => {
+                        this.onAddField(FieldTypes.TEXT)
+                    }}>
+                        add text
+                    </Button>
+                    <Button color="primary" aria-label="add" onClick={() => {
+                        this.onAddField(FieldTypes.NUMBER)
+                    }}>
+                        add number
+                    </Button>
+                </div>
+                <div className="formWrapper">
+                    <Paper className="paperEditForm">
+                        <TextField
+                            label="Form title"
+                            placeholder="Title"
+                            multiline
+                            className={classes.textField}
+                            margin="normal"
+                        />
+                        <TextField
+                            label="Form description"
+                            placeholder="description"
+                            multiline
+                            className={classes.textField}
+                            margin="normal"
+                        />
+
+                        <h3>Fields: </h3>
+                        {
+                            this.props.formState.form.fields.map((field) => {
+                                return <FieldMapper field={field}/>
+                            })
+                        }
+
+                    </Paper>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default EditForm;
+export default withStyles(styles)(EditForm);
