@@ -9,6 +9,7 @@ import {Button} from "material-ui";
 import TextField from "material-ui/es/TextField/TextField";
 import withStyles from "material-ui/es/styles/withStyles";
 import FieldMapper from "../FieldMapper";
+import uuid from 'uuid/v4';
 
 const styles = theme => ({
     container: {
@@ -30,9 +31,10 @@ class EditForm extends Component {
     }
 
     onAddField(fieldType) {
-      this.props.onCreateFormField({
-        type: fieldType
-      })
+        this.props.onCreateFormField({
+            type: fieldType,
+            id: uuid()
+        })
     }
 
     render() {
