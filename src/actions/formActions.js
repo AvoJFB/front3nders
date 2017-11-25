@@ -48,8 +48,8 @@ export const createFormFailure = error => ({
 
 export const createForm = () => (dispatch) => {
   dispatch(createFormRequest());
-  return axios.get(config.CREATE_URL).then(
-    res => dispatch(createFormSuccess(res.data)),
+  return axios.post(config.CREATE_URL, { content: "" }).then(
+    res => dispatch(createFormSuccess(JSON.parse(res.data.payload))),
     error => dispatch(createFormFailure(error)),
   );
 };
