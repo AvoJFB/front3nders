@@ -17,6 +17,9 @@ const styles = theme => ({
         display: 'flex',
         flexWrap: 'wrap',
     },
+    button: {
+        margin: theme.spacing.unit,
+    },
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
@@ -97,6 +100,9 @@ class EditForm extends Component {
                         }
 
                     </Paper>
+                    <Button raised color="primary" className={classes.button}>
+                        Save form
+                    </Button>
                 </div>
             </div>
         )
