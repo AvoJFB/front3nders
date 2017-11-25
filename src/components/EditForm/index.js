@@ -10,6 +10,7 @@ import TextField from "material-ui/es/TextField/TextField";
 import withStyles from "material-ui/es/styles/withStyles";
 import FieldMapper from "../FieldMapper";
 import uuid from 'uuid/v4';
+import MdRemoveRedEye from "react-icons/lib/md/remove-red-eye";
 
 const styles = theme => ({
     container: {
@@ -48,6 +49,7 @@ class EditForm extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
+                        <MdRemoveRedEye />
                     </Toolbar>
                 </AppBar>
                 <div>
