@@ -7,7 +7,7 @@ const containerStyles = {
   "flex-direction": "column",
   "align-items": "center",
   "justify-content": "center",
-  "height": "100vh"
+  "height": "100vhx`"
 };
 
 const paperStyles = {
