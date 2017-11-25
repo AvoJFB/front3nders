@@ -5,6 +5,7 @@ import configureStore from './store';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import DashboardContainer from './containers/DashboardContainer';
 import EditFormContainer from './containers/EditFormContainer';
+import PreviewFormContainer from "./containers/PreviewFormContainer/index";
 
 const theme = createMuiTheme({
   direction: 'ltr',
@@ -22,6 +23,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path='/' component={DashboardContainer} />
                   <Route path='/edit/:id' component={EditFormContainer}/>
+                  <Route path='/preview/:id' component={PreviewFormContainer}/>
                 </Switch>
               </div>
             </MuiThemeProvider>
