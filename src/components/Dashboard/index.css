@@ -1,4 +1,4 @@
-.container {
+.containerDashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     min-height: 100vh;
 }
 
-.paper {
+.paperDashboard {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -15,19 +15,19 @@
     text-align: center;
 }
 
-.paper:hover {
+.paperDashboard:hover {
     background: #eeeeee;
     cursor: pointer;
 }
 
-.paper:active {
+.paperDashboard:active {
     background: #ababab;
     -webkit-box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.5);
 }
 
-.paper:hover .plusIcon {
+.paperDashboard:hover .plusIcon {
     transform: rotate(180deg);
 }
 
@@ -35,4 +35,13 @@
     font-size: 320px;
     transition: transform 0.4s;
     transition-timing-function: ease-out;
+}
+
+.titlesContainer h1 {
+    line-height: 10px;
+}
+
+.titlesContainer {
+    margin: 10px 0;
+    text-align: center;
 }

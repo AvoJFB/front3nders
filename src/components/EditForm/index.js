@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Paper from 'material-ui/Paper';
+import './index.css';
 
 class EditFormComponent extends Component {
   componentWillMount() {
@@ -10,7 +12,10 @@ class EditFormComponent extends Component {
   render() {
     return (
       <div>
-        Edit Component
+        <h1 className="formTitle">Form Title</h1>
+        <Paper className="paper">
+          <h1>faf</h1>
+        </Paper>
       </div>
     )
   }
