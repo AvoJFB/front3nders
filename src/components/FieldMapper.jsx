@@ -9,7 +9,7 @@ class FieldMapper extends Component {
 
     handleOnChange(text) {
         this.props.field.title = text;
-        this.props.onUpdateFomfield(this.props.field);
+        this.props.onUpdateFormField(this.props.field);
     }
 
     render() {
@@ -21,8 +21,11 @@ class FieldMapper extends Component {
 
             ]) {
             return <div>
-                <div>Enter field title</div>
-                <TextField {...this.props} onChange={(e) => {
+                <TextField
+                  label="Field title"
+                  value={this.props.field.title}
+                  {...this.props}
+                  onChange={(e) => {
                     this.handleOnChange(e.target.value)
                 }}/>
             </div>

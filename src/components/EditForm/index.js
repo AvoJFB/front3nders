@@ -8,7 +8,7 @@ import './index.css';
 import {Button} from "material-ui";
 import TextField from "material-ui/es/TextField/TextField";
 import withStyles from "material-ui/es/styles/withStyles";
-import FieldMapper from "../FieldMapper";
+import FieldMapperContainer from '../../containers/FieldMapperContainer';
 import uuid from 'uuid/v4';
 import MdRemoveRedEye from "react-icons/lib/md/remove-red-eye";
 
@@ -34,12 +34,24 @@ class EditForm extends Component {
         }
     }
 
+  handleUpdateForm() {
+        this.props.onUpdateForm(this.props.formState.form)
+  }
+
     onAddField(fieldType) {
         this.props.onCreateFormField({
             type: fieldType,
             id: uuid()
         })
     }
+
+    handleUpdateFormDescription(description) {
+        this.props.onUpdateFormDescription(description)
+    }
+
+  handleUpdateFormTitle(title) {
+    this.props.onUpdateFormTitle(title)
+  }
 
     render() {
         const {classes} = this.props;
@@ -80,6 +92,8 @@ class EditForm extends Component {
                         label="Form title"
                         placeholder="Title"
                         multiline
+                        value={this.props.formState.form.title}
+                        onChange={(e) => this.handleUpdateFormTitle(e.target.value)}
                         className={classes.textField}
                         margin="normal"
                     />
@@ -87,6 +101,8 @@ class EditForm extends Component {
                         label="Form description"
                         placeholder="description"
                         multiline
+                        onChange={(e) => this.handleUpdateFormDescription(e.target.value)}
+                        value={this.props.formState.form.description}
                         className={classes.textField}
                         margin="normal"
                     />
@@ -95,12 +111,12 @@ class EditForm extends Component {
                         <h3>Fields: </h3>
                         {
                             this.props.formState.form.fields.map((field) => {
-                                return <FieldMapper field={field}/>
+                                return <FieldMapperContainer field={field}/>
                             })
                         }
 
                     </Paper>
-                    <Button raised color="primary" className={classes.button}>
+                    <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
                         Save form
                     </Button>
                 </div>
