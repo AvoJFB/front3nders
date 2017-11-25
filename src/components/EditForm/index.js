@@ -161,9 +161,12 @@ class EditForm extends Component {
 
                     </Paper>
 
-          <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
-            Save form
-          </Button>
+                  <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
+                    Save form
+                  </Button>
+                    <a href=""><Button color="primary" className={classes.button}>
+                        CANCEL
+                    </Button></a>
         </div>
       </div>
     )
