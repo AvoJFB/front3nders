@@ -5,16 +5,7 @@ import {
 } from '../constants/formConstants';
 
 const formReducer = (state = {
-  form: {
-    "name": "myForm",
-    "description": "myDescription",
-    "fields": [
-      {
-        "title": "myField",
-        "type": 0,
-      }
-    ]
-  },
+  form: null,
   isFetching: false,
   error: null,
 }, action) => {
