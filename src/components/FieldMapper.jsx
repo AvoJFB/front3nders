@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FieldTypes from '../constants/fieldTypes';
-import TextField from "../../node_modules/material-ui/TextField/TextField";
-import Button from "material-ui/es/Button/Button";
+import TextField from "material-ui/TextField";
+import Button from "material-ui/Button";
 
 class FieldMapper extends Component {
     constructor() {

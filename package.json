@@ -2,6 +2,7 @@
   "name": "hackathon",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://avojfb.github.io/front3nders",
   "dependencies": {
     "axios": "^0.17.1",
     "material-ui": "^1.0.0-beta.21",
