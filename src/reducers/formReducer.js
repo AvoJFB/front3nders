@@ -8,7 +8,7 @@ import {
   UPDATE_FORM_FIELD,
   CREATE_FORM_FIELD,
   UPDATE_FORM_DESCRIPTION,
-  UPDATE_FORM_TITLE, UPDATE_FORM_REQUEST, UPDATE_FORM_SUCCESS, UPDATE_FORM_FAILURE
+  UPDATE_FORM_TITLE, UPDATE_FORM_REQUEST, UPDATE_FORM_SUCCESS, UPDATE_FORM_FAILURE, UPDATE_FORM_COLOR
 } from '../constants/formConstants';
 
 const formReducer = (state = {
@@ -97,6 +97,14 @@ const formReducer = (state = {
         error: action.error,
         isFetching: false,
       };
+    case UPDATE_FORM_COLOR:
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          color: action.color
+        }
+      }
     default:
       return state;
   }

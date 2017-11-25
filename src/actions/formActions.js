@@ -8,7 +8,7 @@ import {
   CREATE_FORM_REQUEST,
   CREATE_FORM_FAILURE,
   CREATE_FORM_SUCCESS, UPDATE_FORM_FIELD, CREATE_FORM_FIELD, UPDATE_FORM_TITLE, UPDATE_FORM_DESCRIPTION,
-  UPDATE_FORM_REQUEST, UPDATE_FORM_SUCCESS, UPDATE_FORM_FAILURE
+  UPDATE_FORM_REQUEST, UPDATE_FORM_SUCCESS, UPDATE_FORM_FAILURE, UPDATE_FORM_COLOR
 } from '../constants/formConstants';
 import {history} from 'react-router-dom'
 
@@ -104,3 +104,8 @@ export const updateForm = (form) => (dispatch) => {
     error => dispatch(updateFormFailure(error)),
   );
 };
+
+export const updateFormColor = color => ({
+  type: UPDATE_FORM_COLOR,
+  color,
+});

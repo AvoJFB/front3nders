@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import {createFormField, getForm, updateForm, updateFormDescription, updateFormTitle} from '../../actions/formActions';
+import {
+  createFormField, getForm, updateForm, updateFormColor, updateFormDescription,
+  updateFormTitle
+} from '../../actions/formActions';
 import EditFormComponent from '../../components/EditForm';
 
 const mapStateToProps = state => ({
@@ -12,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
   onUpdateFormTitle: (title) => dispatch(updateFormTitle(title)),
   onUpdateFormDescription: (description) => dispatch(updateFormDescription(description)),
   onUpdateForm: (form) => dispatch(updateForm(form)),
+  onUpdateFormColor: (color) => dispatch(updateFormColor(color)),
 });
 
 const EditFormContainer = connect(

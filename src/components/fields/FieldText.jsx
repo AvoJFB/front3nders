@@ -22,8 +22,7 @@ class FieldText extends Component {
             <div>
                 <h3>{this.props.field.title}</h3>
                 <TextField
-                    label="description"
-                    placeholder="your answer"
+                    label="your answer"
                     multiline
                     className={classes.textField}
                     margin="normal"

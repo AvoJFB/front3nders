@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
+import MdAddCircle from 'react-icons/lib/md/add-circle';
 import Typography from 'material-ui/Typography';
 import FieldTypes from '../../constants/fieldTypes';
 import './index.css';
@@ -10,44 +11,61 @@ import TextField from "material-ui/es/TextField/TextField";
 import withStyles from "material-ui/es/styles/withStyles";
 import FieldMapperContainer from '../../containers/FieldMapperContainer';
 import uuid from 'uuid/v4';
-import MdRemoveRedEye from "react-icons/lib/md/remove-red-eye";
+import MdRemoveRedEye from 'react-icons/lib/md/remove-red-eye';
+import {ChromePicker, SketchPicker} from 'react-color'
 
 const styles = theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    button: {
-        margin: theme.spacing.unit,
-    },
-    textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        width: "100%",
-    },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: "100%",
+  },
 });
 
 class EditForm extends Component {
-    componentWillMount() {
-        if (!this.props.formState.form) {
-            this.props.onGetForm(this.props.match.params.id)
-        }
-    }
+  state = {
+    displayColorPicker: false,
+  };
 
-  handleUpdateForm() {
-        this.props.onUpdateForm(this.props.formState.form)
+  handleClick = () => {
+    this.setState({ displayColorPicker: !this.state.displayColorPicker })
+  };
+
+  handleClose = () => {
+    this.setState({ displayColorPicker: false })
+  };
+
+  componentWillMount() {
+    if (!this.props.formState.form) {
+      this.props.onGetForm(this.props.match.params.id)
+    }
   }
 
-    onAddField(fieldType) {
-        this.props.onCreateFormField({
-            type: fieldType,
-            id: uuid()
-        })
-    }
+  handleUpdateForm() {
+    this.props.onUpdateForm(this.props.formState.form)
+  }
 
-    handleUpdateFormDescription(description) {
-        this.props.onUpdateFormDescription(description)
-    }
+  onAddField(fieldType) {
+    this.props.onCreateFormField({
+      type: fieldType,
+      id: uuid()
+    })
+  }
+
+  handleColorChange(color) {
+    this.props.onUpdateFormColor(color.hex)
+  }
+
+  handleUpdateFormDescription(description) {
+    this.props.onUpdateFormDescription(description)
+  }
 
   handleUpdateFormTitle(title) {
     this.props.onUpdateFormTitle(title)
@@ -55,6 +73,17 @@ class EditForm extends Component {
 
     render() {
         const {classes} = this.props;
+        const popover = {
+          position: 'absolute',
+          zIndex: '2',
+        };
+        const cover = {
+          position: 'fixed',
+          top: '0px',
+          right: '0px',
+          bottom: '0px',
+          left: '0px',
+        };
         const buttons = [
             {type: FieldTypes.TEXT, name: 'Add Text'},
             {type: FieldTypes.NUMBER, name: 'Add number'},
@@ -71,23 +100,28 @@ class EditForm extends Component {
                 <AppBar position="static">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.formState.form.id}`)} className="MdEye" />
+                      <div className="toolsIcons">
+                        <div className="menuContainer">
+                          <MdAddCircle className="plusFieldIcon"/>
+                          <div className="addFieldContainer">
+                            {
+                              buttons.map((btn) => {
+                                return <Button color="primary" aria-label="add" onClick={() => {
+                                  this.onAddField(btn.type)
+                                }}>
+                                  {
+                                    btn.name
+                                  }
+                                </Button>
+                              })
+                            }
+
+                          </div>
+                        </div>
+                        <MdRemoveRedEye onClick={() => this.props.history.push(`/preview/${this.props.match.params.id}`)} className="eyeIcon" />
+                      </div>
                     </Toolbar>
                 </AppBar>
-                <div>
-                    {
-                        buttons.map((btn) => {
-                            return <Button color="primary" aria-label="add" onClick={() => {
-                                this.onAddField(btn.type)
-                            }}>
-                                {
-                                    btn.name
-                                }
-                            </Button>
-                        })
-                    }
-
-                </div>
                 <div className="formWrapper">
                     <TextField
                         label="Form title"
@@ -107,23 +141,32 @@ class EditForm extends Component {
                         className={classes.textField}
                         margin="normal"
                     />
-                    <Paper className="paperEditForm">
+                    <Paper style={{"backgroundColor": this.props.formState.form.color}} className="paperEditForm">
 
-                        <h3>Fields: </h3>
-                        {
-                            this.props.formState.form.fields.map((field) => {
-                                return <FieldMapperContainer field={field}/>
-                            })
-                        }
+            <h3>Fields: </h3>
+            {
+              this.props.formState.form.fields.map((field) => {
+                return <FieldMapperContainer field={field}/>
+              })
+            }
 
-                    </Paper>
-                    <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
-                        Save form
-                    </Button>
-                </div>
-            </div>
-        )
-    }
+          </Paper>
+
+          <div>
+            <button onClick={() => this.handleClick()}>Pick Color</button>
+            { this.state.displayColorPicker ? <div style={ popover }>
+              <div style={ cover } onClick={() => this.handleClose()}/>
+              <ChromePicker color={this.props.formState.form.color} onChange={(color) => this.handleColorChange(color)} />
+            </div> : null }
+          </div>
+
+          <Button onClick={() => this.handleUpdateForm()} raised color="primary" className={classes.button}>
+            Save form
+          </Button>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default withStyles(styles)(EditForm);
