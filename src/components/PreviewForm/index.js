@@ -5,7 +5,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import FieldTypes from '../../constants/fieldTypes';
 import './index.css';
-import MdRemoveRedEye from "react-icons/lib/md/remove-red-eye";
+import MdEdit from "react-icons/lib/md/edit";
 import FieldPreviewMapper from "../FieldPreviewMapper";
 
 class PreviewForm extends Component {
@@ -24,7 +24,7 @@ class PreviewForm extends Component {
                 <AppBar position="static">
                     <Toolbar className="containerHeader">
                         <Typography className="companyTitle" type="title" color="inherit">Green Forest Bank</Typography>
-                        <MdRemoveRedEye className="MdEye"/>
+                        <MdEdit className="editIcon"/>
                     </Toolbar>
                 </AppBar>
                 <div className="formWrapper">

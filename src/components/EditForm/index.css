@@ -25,7 +25,8 @@ body {
 }
 
 .eyeIcon,
-.plusFieldIcon {
+.plusFieldIcon,
+.editIcon {
     font-size: 30px;
     transition: opacity 0.2s;
     margin: 0 5px;
@@ -33,7 +34,8 @@ body {
 }
 
 .eyeIcon:hover,
-.plusFieldIcon:hover {
+.plusFieldIcon:hover,
+.editIcon:hover {
     cursor: pointer;
     opacity: 0.7;
 }
