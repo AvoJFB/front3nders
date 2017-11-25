@@ -41,7 +41,7 @@ const formReducer = (state = {
       return {
         ...state,
         form: {
-          fields: state.form.fields.map(field => field.name === action.field.name ?
+          fields: state.form.fields.map(field => field.type === action.field.type ?
             { ...field, value: field.value } : field
           )
         }
@@ -51,9 +51,9 @@ const formReducer = (state = {
         ...state,
         form: {
           fields: [
+            ...state.form.fields,
             {
-              name: action.field.name,
-              value: ''
+              ...action.field
             }
           ]
         }
