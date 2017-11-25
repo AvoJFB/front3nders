@@ -8,6 +8,8 @@ import { withStyles } from 'material-ui/styles';
 import FormText from '../fields/FieldText';
 import FormNumber from '../fields/FieldNumber';
 import FormSelect from '../fields/FieldSelect';
+import FormTitle from '../fields/FieldTitle';
+import FormDescription from '../fields/FieldDescription';
 import './index.css';
 
 const styles = theme => ({
@@ -38,7 +40,8 @@ class EditForm extends Component {
           </Toolbar>
         </AppBar>
         <div className="formWrapper">
-            <FormText />
+            <FormTitle />
+            <FormDescription />
             <Paper className="paperEditForm">
             <FormText />
             <FormNumber />
