@@ -4,7 +4,7 @@ import {
   GET_FORM_SUCCESS,
   CREATE_FORM_FAILURE,
   CREATE_FORM_SUCCESS,
-  CREATE_FORM_REQUEST, UPDATE_FORM_FIELD
+  CREATE_FORM_REQUEST, UPDATE_FORM_FIELD, CREATE_FORM_FIELD
 } from '../constants/formConstants';
 
 const formReducer = (state = {
@@ -44,6 +44,18 @@ const formReducer = (state = {
           fields: state.form.fields.map(field => field.name === action.field.name ?
             { ...field, value: field.value } : field
           )
+        }
+      };
+    case CREATE_FORM_FIELD:
+      return {
+        ...state,
+        form: {
+          fields: [
+            {
+              name: action.field.name,
+              value: ''
+            }
+          ]
         }
       };
     default:
