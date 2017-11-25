@@ -10,6 +10,7 @@ class Dashboard extends Component {
   }
 
   handleCreateForm() {
+    this.props.onCreateForm();
     this.props.history.push('/edit/123124')
   }
 

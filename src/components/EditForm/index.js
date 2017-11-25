@@ -14,7 +14,7 @@ class EditForm extends Component {
       <div>
         <h1 className="formTitle">Form Title</h1>
         <Paper className="paper">
-          <h1>faf</h1>
+          <h1>asd</h1>
         </Paper>
       </div>
     )
